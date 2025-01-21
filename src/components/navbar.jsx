@@ -1,3 +1,4 @@
+import Exit from "./exit_btn";
 import Nav from "./nav";
 import Search from "./search";
 
@@ -6,6 +7,7 @@ const Navbar = () => {
     <>
       <Nav />
       <Search />
+      <Exit />
     </>
   );
 };
