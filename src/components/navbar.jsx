@@ -1,13 +1,16 @@
 import Exit from "./exit_btn";
 import Nav from "./nav";
 import Search from "./search";
+import "../css/navbar.css";
 
 const Navbar = () => {
   return (
     <>
-      <Nav />
-      <Search />
-      <Exit />
+      <div class="navbar">
+        <Nav />
+        <Search />
+        <Exit />
+      </div>
     </>
   );
 };
