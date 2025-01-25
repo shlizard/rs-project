@@ -1,7 +1,11 @@
+import NavItem from "./navItem";
+
 const Nav = () => {
   return (
     <>
-      <h1>کوفت</h1>
+      <NavItem name={"فیلم"} />
+      <NavItem name={"سریال ها"} />
+      <NavItem name={"مجموعه ها"} />
     </>
   );
 };
