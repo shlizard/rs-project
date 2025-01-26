@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 
 
-const Exit = () => {
+const ExitBtn = () => {
   return (
     <>
       <div class="exit">
@@ -15,4 +15,4 @@ const Exit = () => {
   );
 };
 
-export default Exit;
+export default ExitBtn;
