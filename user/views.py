@@ -9,6 +9,6 @@ def main(request):
     pass
 
 
-class Apiview(generics.CreateAPIView):
+class Apiview(generics.ListCreateAPIView):
     queryset = Users.objects.all()
     serializer_class = Users_serializer
