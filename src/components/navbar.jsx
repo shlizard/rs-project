@@ -6,11 +6,11 @@ import "../css/navbar.css";
 const Navbar = () => {
   return (
     <>
-      <div class="navbar">
+      <nav>
         <Nav />
         <Search />
         <Exit />
-      </div>
+      </nav>
     </>
   );
 };

@@ -4,8 +4,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const NavItem = (props) => {
   return (
     <>
-      <span>{props.name}</span>
-      <FontAwesomeIcon icon={faAngleDown} />
+      <div className="navItem">
+        <span>{props.name}</span>
+        <FontAwesomeIcon icon={faAngleDown} />
+      </div>
     </>
   );
 };
