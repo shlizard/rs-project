@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics
 from .serializers import Users_serializer
-from .models import Users
+from .models import User
 # Create your views here.
 
 
@@ -10,5 +10,5 @@ def main(request):
 
 
 class Apiview(generics.ListCreateAPIView):
-    queryset = Users.objects.all()
+    queryset = User.objects.all()
     serializer_class = Users_serializer
