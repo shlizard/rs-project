@@ -1,17 +1,15 @@
 import NavItem from "./navItem";
-import UserSettingsBtn from "./userSettingBtn";
 
 const Nav = () => {
   return (
     <>
-      <div className="nav">
-        <UserSettingsBtn />
-        <div className="navItems">
+      <nav className="nav">
+        <div className="nav-items">
           <NavItem name={"فیلم"} />
-          <NavItem name={"سریال ها"} />
+          <NavItem name={"سریال"} />
           <NavItem name={"مجموعه ها"} />
         </div>
-      </div>
+      </nav>
     </>
   );
 };
