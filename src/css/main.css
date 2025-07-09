@@ -1,7 +1,46 @@
+:root {
+  --theme: "light";
+  color-scheme: light;
+
+  @media (prefers-color-scheme: dark) {
+    --theme: "dark";
+    color-scheme: dark;
+  }
+}
+
+:root:has([theme="dark"]) {
+  --theme: "dark";
+  color-scheme: dark;
+}
+
+:root:has([theme="light"]) {
+  --theme: "light";
+  color-scheme: light;
+}
+
+body {
+  --clr-text: hsl(0, 0%, 35%);
+  --clr-body-bg: hsl(0, 0%, 90%);
+  --clr-nav-link-bg: hsl(0, 0%, 95%);
+
+  @container style(--theme: "dark") {
+    --clr-text: hsl(0, 0%, 95%);
+    --clr-body-bg: hsl(0, 0%, 10%);
+    --clr-nav-link-bg: hsl(0, 0%, 15%);
+  }
+
+  background-color: var(--clr-body-bg) !important;
+}
+
 *,
 *::after,
 *::before {
   box-sizing: border-box;
+}
+
+@font-face {
+  font-family: yekan;
+  src: url(../fonts/iranyekanwebbold.ttf);
 }
 
 * {
@@ -11,6 +50,13 @@
   font-family: yekan, roboto;
 }
 
-body {
-  font-size: 16px;
+a {
+  text-decoration: none;
+  color: #666;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }

@@ -1,10 +1,13 @@
 import { faCircleUser } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router";
 
 const UserSettingsBtn = () => {
   return (
     <>
-      <FontAwesomeIcon icon={faCircleUser} />
+      <Link>
+        <FontAwesomeIcon icon={faCircleUser} className="user-icon" />
+      </Link>
     </>
   );
 };

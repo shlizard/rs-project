@@ -1,4 +1,4 @@
-echo "Wwitching to branch master"
+echo "watching to branch master"
 git checkout master
 
 echo "Building app..."

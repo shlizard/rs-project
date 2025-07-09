@@ -1,12 +1,15 @@
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router";
 
 const NavItem = (props) => {
   return (
     <>
-      <div className="navItem">
-        <span>{props.name}</span>
-        <FontAwesomeIcon icon={faAngleDown} />
+      <div className="nav-item">
+        <Link className="nav-item-link">
+          <span>{props.name}</span>
+          <FontAwesomeIcon icon={faAngleDown} className="nav-icon" />
+        </Link>
       </div>
     </>
   );

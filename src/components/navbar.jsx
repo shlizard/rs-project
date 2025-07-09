@@ -1,16 +1,60 @@
-import Exit from "./exit_btn";
 import Nav from "./nav";
-import Search from "./search";
 import "../css/navbar.css";
+import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
+import SearchButton from "./searchButton";
+import {
+  useScroll,
+  motion,
+  useTransform,
+  useMotionValueEvent,
+} from "motion/react";
+import { useState } from "react";
+import { ThemeSelectorButton } from "./themeSelectorButton";
 
 const Navbar = () => {
+  const { scrollYProgress } = useScroll({
+    offset: ["125vh", "160vh"],
+  });
+
+  const [YProgress, setYProgress] = useState(0);
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    setYProgress(latest);
+  });
+
+  const top = useTransform(scrollYProgress, [0, 1], ["-5rem", "1rem"]);
+
   return (
     <>
-      <nav>
-        <Nav />
-        <Search />
-        <Exit />
-      </nav>
+      <motion.header
+        style={{
+          top,
+          width: YProgress < 0.1 ? "auto" : "fit-content",
+          borderRadius: YProgress < 0.1 ? "0" : "100vh",
+          border: YProgress < 0.1 ? "" : "1px solid hsl(0, 0%, 0%, 0.1)",
+          background: YProgress < 0.1 ? "transparent" : "hsl(0, 0%, 100%, 0.1)",
+        }}
+        className={YProgress < 0.1 ? "" : "scroll-header"}
+      >
+        <Container maxWidth="lg" className="header">
+          <Nav />
+          <Box
+            sx={{
+              flex: "1 1 0",
+              justifyContent: "flex-end",
+              alignItems: "center",
+              gap: "2rem",
+              display: YProgress < 0.1 ? "flex" : "none",
+            }}
+            component={"div"}
+            className="left-header-side"
+          >
+            <ThemeSelectorButton />
+            <SearchButton />
+          </Box>
+        </Container>
+      </motion.header>
     </>
   );
 };
