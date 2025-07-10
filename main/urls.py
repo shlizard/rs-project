@@ -1,5 +1,6 @@
 from django.urls import path
-
+from . import views
 urlpatterns = [
-   # path('',),
+    path('movie',views.MovieApiView.as_view()),
+    path('serie',views.SerieApiView.as_view()),
 ]
