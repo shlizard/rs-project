@@ -11,6 +11,7 @@ import {
 } from "motion/react";
 import { useState } from "react";
 import { ThemeSelectorButton } from "./themeSelectorButton";
+import UserSettingsBtn from "./userSettingBtn";
 
 const Navbar = () => {
   const { scrollYProgress } = useScroll({
@@ -43,7 +44,6 @@ const Navbar = () => {
             sx={{
               flex: "1 1 0",
               justifyContent: "flex-end",
-              alignItems: "center",
               gap: "2rem",
               display: YProgress < 0.1 ? "flex" : "none",
             }}
@@ -52,6 +52,7 @@ const Navbar = () => {
           >
             <ThemeSelectorButton />
             <SearchButton />
+            <UserSettingsBtn />
           </Box>
         </Container>
       </motion.header>

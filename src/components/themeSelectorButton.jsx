@@ -39,7 +39,7 @@ export const ThemeSelectorButton = () => {
         >
           <LightMode
             sx={{
-              fontSize: "1rem",
+              fontSize: "1.2rem",
             }}
           />
         </button>
@@ -50,7 +50,7 @@ export const ThemeSelectorButton = () => {
         >
           <DarkMode
             sx={{
-              fontSize: "1rem",
+              fontSize: "1.2rem",
             }}
           />
         </button>
@@ -63,7 +63,7 @@ export const ThemeSelectorButton = () => {
         >
           <Devices
             sx={{
-              fontSize: "1rem",
+              fontSize: "1.2rem",
             }}
           />
         </button>
