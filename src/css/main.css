@@ -20,8 +20,12 @@
 
 body {
   --clr-text: hsl(0, 0%, 35%);
-  --clr-body-bg: hsl(0, 0%, 90%);
-  --clr-nav-link-bg: hsl(0, 0%, 95%);
+  --clr-body-bg: hsl(0, 0%, 95%);
+  --clr-hover-bg: hsl(0, 0%, 100%);
+  --clr-theme-toggle-btn-hover-bg: hsl(0, 0%, 75%);
+  --clr-nav-button-hover-border: hsl(0, 0%, 50%);
+  --clr-nav-button-hover-box-shadow: hsl(0, 0%, 70%);
+  --clr-nav-border: hsl(0, 0%, 85%);
 
   @container style(--theme: "dark") {
     --clr-text: hsl(0, 0%, 95%);
