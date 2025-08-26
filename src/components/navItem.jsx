@@ -6,7 +6,7 @@ const NavItem = (props) => {
   return (
     <>
       <div className="nav-item">
-        <Link className="nav-item-link">
+        <Link className="nav-item-link" to={props.link}>
           <span>{props.name}</span>
           <FontAwesomeIcon icon={faAngleDown} className="nav-icon" />
         </Link>

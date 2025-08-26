@@ -18,16 +18,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include, re_path
 from django.views.generic import TemplateView
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-)
+from django.conf.urls.static import static
+from django.views.static import serve
+
+from backend import settings
+from .views import serve_react
+
 
 urlpatterns = [
-    path("api/", include("main.urls")),
-    path("api/user", include("user.urls")),
-    path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
-    path("api/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("api/", include("api.urls")),
     path("admin/", admin.site.urls),
-    re_path("", TemplateView.as_view(template_name="index.html")),
+    re_path(
+        r"^(?P<path>.*)$", serve_react, {"document_root": settings.REACT_APP_BUILD_PATH}
+    ),
 ]

@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "main.apps.MainConfig",
+    # "main.apps.MainConfig",
+    "main",
     "user",
     "rest_framework",
     "rest_framework_simplejwt",
@@ -56,6 +57,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "user.middlewares.isLoggedIn",
 ]
 
 ROOT_URLCONF = "backend.urls"
@@ -89,7 +91,7 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=90),
     "ROTATE_REFRESH_TOKENS": True,
     "BLACKLIST_AFTER_ROTATION": True,
-    "UPDATE_LAST_LOGIN": False,
+    "UPDATE_LAST_LOGIN": True,
     "ALGORITHM": "HS256",
     "SIGNING_KEY": SECRET_KEY,
     "VERIFYING_KEY": "",
@@ -165,17 +167,30 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
+MEDIA_ROOT = BASE_DIR
+MEDIA_URL = "/api/"
 
-if DEBUG:
-    STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, "build\static\\"),
-        os.path.join(BASE_DIR, ""),
-    )
-else:
-    STATIC_ROOT = BASE_DIR / "build/static/"
+REACT_APP_BUILD_PATH = BASE_DIR / "build"
+
+# if DEBUG:
+#     STATICFILES_DIRS = (
+#         os.path.join(BASE_DIR, "build\static\\"),
+#         os.path.join(BASE_DIR, ""),
+#         os.path.join(BASE_DIR, "build\images\\"),
+#     )
+# else:
+#     STATIC_ROOT = BASE_DIR / "build/static/"
+
+# if DEBUG:
+#     MEDIAFILES_DIRS = (
+#         os.path.join(BASE_DIR, "build\media\\"),
+#         os.path.join(BASE_DIR, "build\images\\"),
+#     )
+# else:
+#     MEDIA_ROOT = BASE_DIR / "build/images/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-AUTH_USER_MODEL = 'user.User'
+AUTH_USER_MODEL = "user.User"

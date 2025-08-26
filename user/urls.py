@@ -1,5 +1,9 @@
 from django.urls import path
-from . import views
+from .views import UserViewSet
+
 urlpatterns = [
-    # path('',views.Apiview.as_view())
+    path("register/", UserViewSet.as_view({"post": "register"})),
+    path("login/", UserViewSet.as_view({"post": "login"})),
+    path("me/", UserViewSet.as_view({"get": "user"})),
+    path("", UserViewSet.as_view({"get": "users"})),
 ]

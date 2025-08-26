@@ -33,12 +33,12 @@ const Navbar = () => {
           top,
           width: YProgress < 0.1 ? "auto" : "fit-content",
           borderRadius: YProgress < 0.1 ? "0" : "100vh",
-          border: YProgress < 0.1 ? "" : "1px solid hsl(0, 0%, 0%, 0.1)",
-          background: YProgress < 0.1 ? "transparent" : "hsl(0, 0%, 100%, 0.1)",
+          // border: YProgress < 0.1 ? "" : "1px solid hsl(0, 0%, 0%, 0.1)",
+          // background: YProgress < 0.1 ? "transparent" : "hsl(166, 95%, 100%, 0.1)",
         }}
-        className={YProgress < 0.1 ? "" : "scroll-header"}
+        className={YProgress < 0.1 ? "nav-header" : "nav-header scroll-header"}
       >
-        <Container maxWidth="lg" className="header">
+        <Container maxWidth="xl" className="header">
           <Nav />
           <Box
             sx={{

@@ -1,0 +1,115 @@
+.home-page-header {
+  height: 100vh;
+  position: relative;
+}
+
+.banner {
+  background-image: url("../../public/static/images/defaultMoviePageBg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.banner::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: hsl(from var(--bg-color) h s l / 0.7);
+  backdrop-filter: blur(5px);
+}
+
+.banner-detail {
+  margin-top: 15rem;
+  color: var(--text-color);
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.banner-buttons {
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+  gap: 3rem;
+  margin-bottom: 10rem;
+  margin-top: 2rem;
+}
+
+.banner-title {
+  width: max-content;
+  color: var(--text-color);
+  text-align: center;
+  z-index: 100;
+  margin-bottom: 7rem;
+  margin-inline: auto;
+  white-space: nowrap;
+  border-left: 1px solid var(--text-color);
+  overflow: hidden;
+  animation: typing 3s steps(18) forwards, blink 500ms step-end infinite;
+}
+
+.banner-info-btn {
+  background-color: var(--brand-color);
+  padding: 1rem;
+  border-radius: 15px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.banner-before-after-buttons {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.banner-before-after-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(from var(--brand-color) h s l / 0.1);
+  border: 1px solid hsl(from var(--brand-color) h s l / 0.5);
+}
+
+.banner-before-after-btn::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: hsl(from var(--brand-color) h s l / 0.3);
+  filter: blur(5px);
+  border-radius: 100vh;
+}
+
+.banner-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}

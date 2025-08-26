@@ -5,9 +5,9 @@ const Nav = () => {
     <>
       <nav className="nav">
         <div className="nav-items">
-          <NavItem name={"فیلم"} />
-          <NavItem name={"سریال"} />
-          <NavItem name={"مجموعه ها"} />
+          <NavItem link={"/movies"} name={"فیلم"} />
+          <NavItem link={"/series"} name={"سریال"} />
+          <NavItem link={"/movies"} name={"مجموعه ها"} />
         </div>
       </nav>
     </>

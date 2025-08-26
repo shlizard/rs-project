@@ -1,26 +1,19 @@
-header {
-  position: relative;
+.nav-header {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 2px solid var(--clr-nav-border);
+  border-bottom: 2px solid hsl(from var(--border-color) h s l / .1);
   background-color: transparent;
   backdrop-filter: blur(8px);
   margin: 0 auto;
   position: sticky;
   z-index: 1000;
-  top: -5rem;
 }
 
-.scroll-header::before {
-  content: "";
-  position: absolute;
-  z-index: -10;
-  width: 100%;
-  height: 100%;
-  border-radius: 100vh;
-  border: 1px solid var(--clr-nav-border);
-  box-shadow: 0 0 10px 3px hsl(0, 0%, 0%, 0.1);
+.scroll-header {
+  border-bottom: none;
+  border: 2px solid hsl(from var(--border-color) h s l / .3);
+  box-shadow: 0 0 10px 1px hsl(from var(--shadow-color) h s l / .5);
 }
 
 .header {
@@ -50,7 +43,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--clr-text);
+  color: var(--text-color);
 }
 
 .nav-item-link::after {
@@ -60,6 +53,7 @@ header {
   border-radius: 13px;
   width: calc(100% + 20px);
   height: calc(100% + 10px);
+  border-color: hsl(from var(--border-color) h s l / .1);
   transition: 300ms all;
 }
 
@@ -68,9 +62,9 @@ header {
 }
 
 .nav-item-link:hover::after {
-  border: 1px solid var(--clr-nav-button-hover-border);
-  background-color: var(--clr-hover-bg);
-  box-shadow: 0 0 3px 1px var(--clr-nav-button-hover-box-shadow);
+  border: 1px solid hsl(from var(--border-color) h s l / .1);
+  background-color: var(--bg-color);
+  box-shadow: 0 0 3px 3px hsl(from var(--shadow-color) h s l / .3);
 }
 
 .nav-button {
@@ -80,7 +74,7 @@ header {
   align-items: center;
   gap: 0.5rem;
   padding: 0.15rem;
-  color: var(--clr-text);
+  color: var(--text-color);
 }
 
 .nav-button::after {
@@ -89,16 +83,16 @@ header {
   width: calc(100% + 15px);
   height: calc(100% + 15px);
   z-index: -1;
-  border: 1px solid hsl(0, 0%, 0%, 0.1);
+  border: 1px solid hsl(from var(--border-muted-color) h s l / .1);
   border-radius: 10px;
-  box-shadow: 0 0 1px 1px hsl(0, 0%, 0%, 0.1);
+  box-shadow: 0 0 1px 1px hsl(from var(--shadow-color) h s l / .3);
   transition: all 200ms;
 }
 
 .nav-button:hover::after {
-  background-color: var(--clr-hover-bg);
-  box-shadow: 0 0 3px 1px var(--clr-nav-button-hover-box-shadow);
-  border: 1px solid var(--clr-nav-button-hover-border);
+  background-color: var(--bg-color);
+  box-shadow: 0 0 3px 3px hsl(from var(--shadow-color) h s l / .3);
+  border: 1px solid hsl(from var(--border-color) h s l / .1);
 }
 
 .search-icon {
@@ -114,22 +108,22 @@ header {
   position: relative;
   justify-content: center;
   align-items: center;
-  color: var(--clr-text);
+  color: var(--text-color);
   z-index: 1000;
 }
 
 .toggle-theme-button::before {
   content: "";
   position: absolute;
-  width: calc(100% + 5px);
-  height: calc(100% + 5px);
-  border-radius: 100vh;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  border-radius: 5px;
   z-index: -1;
   transition: 200ms background-color;
 }
 
 .toggle-theme-button:hover::before {
-  background-color: var(--clr-theme-toggle-btn-hover-bg);
+  background-color: var(--bg-light-color);
 }
 
 .active::after {
@@ -137,5 +131,5 @@ header {
   position: absolute;
   width: 100%;
   height: calc(100% + 7px);
-  border-bottom: 2px solid hsl(0, 0%, 0%, 0.3);
+  border-bottom: 2px solid hsl(from var(--border-color) h s l / .5);
 }

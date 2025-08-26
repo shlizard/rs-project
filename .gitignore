@@ -6,12 +6,16 @@
 /.conda
 /.pnp
 .pnp.js
-db.sqlite3
+
 # testing
 /coverage
 
+/db.sqlite3
+
 # production
 /build
+/ml-32m
+/ai
 
 # misc
 .DS_Store
@@ -23,8 +27,3 @@ db.sqlite3
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-<<<<<<< HEAD
-/db.sqlite3
-=======
->>>>>>> 5829a54f47dc7c8a8ce5bd0e51d8022cf21d7f66

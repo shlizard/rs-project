@@ -1,0 +1,141 @@
+.ms-container {
+  position: relative;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 150ms;
+}
+
+.ms-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.ms-detail-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  background-color: hsl(from var(--bg-light-color) h s l / 0.5);
+  backdrop-filter: blur(10px);
+  transition: all 300ms;
+  border-radius: 10px;
+  color: var(--text-color);
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.ms-icons-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ms-icons {
+  position: relative;
+  color: hsl(from var(--danger-color) h s l / 0.7);
+  border: 1px solid hsl(from var(--danger-color) h s l / 0.7);
+  padding: 0.5rem;
+  border-radius: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+.ms-icons::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  filter: blur(5px);
+  border-radius: 100vh;
+  border: 5px solid hsl(from var(--danger-color) h s l / 0.7);
+  z-index: -1;
+  box-shadow: 0px 0px 3px 3px hsl(from var(--danger-color) h s l / 0.7);
+  transition: all 300ms;
+}
+
+.ms-icons-active::before {
+  border-color: hsl(from var(--success-color) h s l / 0.7);
+  box-shadow: 0px 0px 3px 3px hsl(from var(--success-color) h s l / 0.7);
+}
+
+.ms-icons-active {
+  color: hsl(from var(--success-color) h s l / 0.7);
+  border-color: hsl(from var(--success-color) h s l / 0.7);
+}
+
+.ms-detail-container:hover {
+  opacity: 1;
+}
+
+.ms-container:hover {
+  transform: translateY(-15px);
+  scale: 1.1;
+}
+
+.ms-title {
+  position: absolute;
+  color: var(--text-color);
+  font-size: 1rem;
+  bottom: -1.7rem;
+  right: 0.5rem;
+}
+
+.ms-detail-span-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 1rem;
+  flex: 1 1 0;
+}
+
+.ms-detail-span-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+}
+
+.ms-imdb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.ms-imdb-span {
+  flex: 0 1 0;
+  width: fit-content;
+}
+
+.ms-age-span {
+  align-self: flex-end;
+  width: 35px;
+  height: 35px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  border-radius: 100vh;
+  border: 1px solid hsl(from var(--warning-color) h s l / 0.9);
+  color: var(--warning-color);
+}
+
+.ms-age-span::before {
+  content: "";
+  background-color: hsl(from var(--warning-color) h s l / 0.3);
+  position: absolute;
+  filter: blur(3px);
+  border-radius: 100vh;
+  width: 100%;
+  height: 100%;
+}

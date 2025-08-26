@@ -9,32 +9,30 @@ from backend.models import TimeStampedModel
 
 
 class UserManager(BaseUserManager):
-    def _create_User(self, email, password, username, **extra_fields):
+    def _create_User(self, email, password, **extra_fields):
         if not email:
             raise ValueError("ایمیل باید وارد شود")
         if not password:
             raise ValueError("رمز عبور باید وارد شود")
-        if not username:
-            raise ValueError("نام کاربری باید وارد شود")
 
         email = self.normalize_email(email)
-        user = self.model(email=email, username=username, **extra_fields)
+        user = self.model(email=email, **extra_fields)
 
         user.set_password(password)
         user.save(using=self._db)
         return user
 
-    def create_user(self, email, password, username, **extra_fields):
+    def create_user(self, email, password, **extra_fields):
         extra_fields.setdefault("is_superuser", False)
-        return self._create_User(email, password, username, **extra_fields)
+        return self._create_User(email, password, **extra_fields)
 
-    def create_superuser(self, email, password, username, **extra_fields):
+    def create_superuser(self, email, password, **extra_fields):
         extra_fields.setdefault("is_superuser", True)
-        return self._create_User(email, password, username, **extra_fields)
+        return self._create_User(email, password, **extra_fields)
 
 
 class User(AbstractBaseUser, PermissionsMixin, TimeStampedModel):
-    username = models.CharField(max_length=20, unique=True)
+    # username = models.CharField(max_length=20, unique=True, blank=True)
     email = models.EmailField(unique=True, max_length=40)
     first_name = models.CharField(max_length=20, blank=True)
     last_name = models.CharField(max_length=20, blank=True)
@@ -45,8 +43,8 @@ class User(AbstractBaseUser, PermissionsMixin, TimeStampedModel):
 
     objects = UserManager()
 
-    USERNAME_FIELD = "username"
-    REQUIRED_FIELDS = ["email"]
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = []
 
     class Meta:
         verbose_name = "User"

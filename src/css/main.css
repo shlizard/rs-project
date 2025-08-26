@@ -19,27 +19,38 @@
 }
 
 body {
-  --clr-text: hsl(0, 0%, 35%);
-  --clr-body-bg: hsl(0, 0%, 95%);
-  --clr-hover-bg: hsl(0, 0%, 100%);
-  --clr-theme-toggle-btn-hover-bg: hsl(0, 0%, 75%);
-  --clr-nav-button-hover-border: hsl(0, 0%, 50%);
-  --clr-nav-button-hover-box-shadow: hsl(0, 0%, 70%);
-  --clr-nav-border: hsl(0, 0%, 85%);
+  --brand-color: hsl(166 60% 47%);
+  --warning-color: hsl(51, 75%, 56%);
+  --danger-color: hsl(357, 61%, 50%);
+  --success-color: hsl(89, 59%, 48%);
+  --info-color: hsl(209, 80%, 55%);
+  --bg-light-color: hsl(166, 50%, 95%);
+  --bg-color: hsl(166, 15%, 85%);
+  --bg-dark-color: hsl(166, 10%, 75%);
+  --text-color: hsl(166, 15%, 15%);
+  --text-muted-color: hsl(166, 15%, 45%);
+  --border-color: hsl(166, 20%, 10%);
+  --border-muted-color: hsl(166, 20%, 20%);
+  --shadow-color: hsl(166, 10%, 10%);
 
   @container style(--theme: "dark") {
-    --clr-text: hsl(0, 0%, 95%);
-    --clr-body-bg: hsl(0, 0%, 10%);
-    --clr-nav-link-bg: hsl(0, 0%, 15%);
+    --bg-light-color: hsl(166, 25%, 25%);
+    --bg-color: hsl(166, 25%, 15%);
+    --bg-dark-color: hsl(166, 25%, 5%);
+    --text-color: hsl(166, 40%, 85%);
+    --text-muted-color: hsl(166, 25%, 65%);
+    --border-color: hsl(166, 40%, 90%);
+    --border-muted-color: hsl(166, 40%, 75%);
+    --shadow-color: hsl(166, 40%, 90%);
   }
 
-  background-color: var(--clr-body-bg) !important;
+  background-color: var(--bg-dark-color) !important;
 }
 
 *,
 *::after,
 *::before {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 }
 
 @font-face {
@@ -63,4 +74,9 @@ button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+input {
+  outline: none;
+  border: none;
 }
